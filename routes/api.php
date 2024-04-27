@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('products', productController::class);
 
-Route::post('products/upload/local', [ProductController::class,'upload.local']);
-Route::post('products/upload/public', [ProductController::class,'upload.public']);
+Route::post('products/upload/local', [ProductController::class,'uploadImageLocal'])->name ('upload.local');
+Route::post('products/upload/public', [ProductController::class,'uploadImagePublic'])->name ('upload.public');
